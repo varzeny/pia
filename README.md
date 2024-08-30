@@ -20,4 +20,10 @@ personal_intelligence_agency. 정보사회에서 살아남기 위한 자동정�
 1. 글로벌 금융지표를 기반으로, 변화에 기반한 뉴스 자동 확보
 
 # 개발환경
-우분투, python, 미정
+- OS : 우분투 20.04+
+- 언어 : python
+- DB : MySQL
+
+# 배포환경
+- 서버 : AWS or Local Server
+- 클라이언트 : 브라우저
