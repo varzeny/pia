@@ -8,13 +8,37 @@
     <link rel='stylesheet' type='text/css' href="{{ url_for('static_files', path='common/css/thema.css') }}">
     <link rel='stylesheet' type='text/css' href="{{ url_for('static_files', path='home/css/home.css') }}">
 
-    <script src='main.js'></script>
+    <!-- <script src='main.js'></script> -->
 </head>
 <body>
     {% include "common/header_common.html" %}
 
     <main>
-        ㅇㅀㅇㅀㅇㅀㅇ
+        <h2 style="display: none;">Home</h2>
+        <section class="trend">
+            <h3>Trend</h3>
+            <ul>
+                {% for c in countries %}
+                <li>
+                    {{ c.name }}
+                    <ul>
+                        {% for r in ranks %}
+                        <li>
+                            <a>
+                                {{ r }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="finance">
+            <h3>Finance</h3>
+
+        </section>
     </main>
 
     {% include "common/footer_common.html" %}
