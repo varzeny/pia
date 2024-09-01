@@ -1,25 +1,46 @@
 # main.py
 
+
 # lib
 from fastapi import FastAPI, staticfiles
 
 from dotenv import load_dotenv
 
 # module
+import app.core.background.scheduler as SCHE
+import app.core.database as DB
 from app.l1.routers.home import router as router_home
+from app.l1.routers.trend import router as router_trend
 
+import app.l2.trend as TREND
 
 # method
 async def startup():
+    # script
+    # alembic revision --autogenerate -m "update" 
+    # alembic upgrade head 
+
+    # scheduler
+    SCHE.activate()
+    
+    
+    # l2 trend의 함수 추가
+    # SCHE.set_func_to_timer(
+    #     TREND.get_trends_by_country_all, "get_trend_all", 0, 0
+    # )
+
+
     # database
+    async with DB.ENGINE.begin() as conn:
+        await conn.run_sync( DB.BASE.metadata.create_all )
 
     # authorization
 
-    print()
-
 
 async def shutdown():
-    print()
+    # scheduler
+    SCHE.deactivate()
+
 
 
 # attribute
@@ -40,6 +61,7 @@ application.mount(
 
 # 라우터
 application.include_router( router_home )
+application.include_router( router_trend )
 
 # env
 application.state.env = load_dotenv()

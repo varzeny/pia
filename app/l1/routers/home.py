@@ -8,7 +8,7 @@ from fastapi.requests import Request
 from fastapi.responses import Response
 
 # module
-import app.l2.util as UTIL
+import app.core.util as UTIL
 
 # attribute
 router = APIRouter()
