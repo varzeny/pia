@@ -22,7 +22,12 @@ async def startup():
 
     # scheduler
     SCHE.activate()
-    
+    SCHE.set_func_to_timer(
+        func=SCHE.get_trends_by_country_all,
+        name="get_trends_by_country_all",
+        hour=0,
+        min=0
+    )
     
     # l2 trend의 함수 추가
     # SCHE.set_func_to_timer(

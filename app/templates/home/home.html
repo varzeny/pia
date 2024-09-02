@@ -18,21 +18,25 @@
         <section class="trend">
             <h3>Trend</h3>
             <ul>
-                {% for c in countries %}
-                <li>
-                    {{ c.name }}
-                    <ul>
-                        {% for r in ranks %}
-                        <li>
-                            <a>
-                                {{ r }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                {% for t in trends %}
+                <li class="country-li">
+                    <h4>{{ t.country }}</h4>
+                    <ol>
+                        <li class="rank-li">{{ t.rank_1 }}</li>
+                        <li class="rank-li">{{ t.rank_2 }}</li>
+                        <li class="rank-li">{{ t.rank_3 }}</li>
+                        <li class="rank-li">{{ t.rank_4 }}</li>
+                        <li class="rank-li">{{ t.rank_5 }}</li>
+
+                    </ol>
                 </li>
                 {% endfor %}
             </ul>
+        </section>
+
+        <section class="Community">
+            <h3>Community</h3>
+
         </section>
 
         <section class="finance">

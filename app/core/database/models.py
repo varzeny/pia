@@ -35,3 +35,10 @@ class Trend(BASE):
     rank_18 = Column(String(45))
     rank_19 = Column(String(45))
     rank_20 = Column(String(45))
+
+
+class Test(BASE):
+    __tablename__="test"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(45))

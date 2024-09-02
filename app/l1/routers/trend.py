@@ -2,12 +2,16 @@
 
 # lib
 import os, asyncio
+from fastapi import Depends
 from fastapi.routing import APIRouter
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 from fastapi.responses import Response, JSONResponse
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import text
 
 # module
+import app.core.database as DB
 import app.l2.trend as TREND
 
 
@@ -24,19 +28,10 @@ async def get_trend(req:Request):
     country = req.query_params.get("country")
     print("======", country)
 
-    # respData = {}
 
-    # if country == "all":
-    #     for c in TREND.COUNTRIES:
-    #         result = await asyncio.to_thread( TREND.get_trends_by_country, c )
-    #         if result:
-    #             respData[c] = result
-    # else:
-    #     result = await asyncio.to_thread( TREND.get_trends_by_country, country )
-    #     if result:
-    #         respData[country] = result
+@router.get("/test")
+async def test(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
+    print("tttttttttttttttttttttttttttttt")
+    ss.add( DB.Test(name="lee") )
+    await ss.commit()
 
-    # if not result:
-    #     return Response(status_code=400)
-    # else:
-    #     return JSONResponse(content=respData)
