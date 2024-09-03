@@ -9,7 +9,7 @@ from pytrends.request import TrendReq
 # attribute
 TREND = TrendReq(hl='ko', tz=0)
 COUNTRIES = [
-    'south_korea', 'united_states', 'japan', 'united_kingdom'
+    'south_korea', 'united_states', 'japan', 'germany',"india", "russia"
 ]
 
 # method

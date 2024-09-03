@@ -31,7 +31,7 @@ async def get_html_root(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
     )
     
     recent_trends = result.scalars().all()  # 모든 해당 행을 리스트로 가져옴
-    print(recent_trends)
+    # print(recent_trends)
 
 
     resp = templates.TemplateResponse(

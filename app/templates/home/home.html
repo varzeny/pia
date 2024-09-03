@@ -8,7 +8,7 @@
     <link rel='stylesheet' type='text/css' href="{{ url_for('static_files', path='common/css/thema.css') }}">
     <link rel='stylesheet' type='text/css' href="{{ url_for('static_files', path='home/css/home.css') }}">
 
-    <!-- <script src='main.js'></script> -->
+    <script src="{{ url_for('static_files', path='home/js/home.js') }}"></script>
 </head>
 <body>
     {% include "common/header_common.html" %}
@@ -22,11 +22,16 @@
                 <li class="country-li">
                     <h4>{{ t.country }}</h4>
                     <ol>
-                        <li class="rank-li">{{ t.rank_1 }}</li>
-                        <li class="rank-li">{{ t.rank_2 }}</li>
-                        <li class="rank-li">{{ t.rank_3 }}</li>
-                        <li class="rank-li">{{ t.rank_4 }}</li>
-                        <li class="rank-li">{{ t.rank_5 }}</li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_1}}&tbm=nws">{{ t.rank_1 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_2}}&tbm=nws">{{ t.rank_2 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_3}}&tbm=nws">{{ t.rank_3 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_4}}&tbm=nws">{{ t.rank_4 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_5}}&tbm=nws">{{ t.rank_5 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_6}}&tbm=nws">{{ t.rank_6 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_7}}&tbm=nws">{{ t.rank_7 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_8}}&tbm=nws">{{ t.rank_8 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_9}}&tbm=nws">{{ t.rank_9 }}</a></li>
+                        <li class="rank-li"><a target="_blank" href="https://www.google.com/search?q={{t.rank_10}}&tbm=nws">{{ t.rank_10 }}</a></li>
 
                     </ol>
                 </li>
