@@ -20,6 +20,9 @@ async def startup():
     # alembic revision --autogenerate -m "update" 
     # alembic upgrade head 
 
+    # env
+    load_dotenv()
+
     # scheduler
     SCHE.activate()
     SCHE.set_func_to_timer(
@@ -67,10 +70,6 @@ application.mount(
 # 라우터
 application.include_router( router_home )
 application.include_router( router_trend )
-
-# env
-application.state.env = load_dotenv()
-
 
 
 if __name__ == "__main__":
