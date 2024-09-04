@@ -7,6 +7,9 @@ from fastapi import FastAPI, staticfiles
 
 from dotenv import load_dotenv
 
+# env
+load_dotenv()
+
 # module
 import app.core.background.scheduler as SCHE
 import app.core.database as DB
@@ -22,8 +25,7 @@ async def startup():
     # alembic revision --autogenerate -m "update" 
     # alembic upgrade head 
 
-    # env
-    load_dotenv()
+    
     print( os.getenv("DB_NAME") )
     print( os.getenv("DB_USER") )
     print( os.getenv("DB_PASSWORD") )
