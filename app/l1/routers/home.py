@@ -35,6 +35,7 @@ async def get_html_root(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
 
 
     resp = templates.TemplateResponse(
+        request=req,
         name="home/home.html",
         context={
             "request":req,
