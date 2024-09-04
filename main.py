@@ -24,7 +24,11 @@ async def startup():
 
     # env
     load_dotenv()
-    print(os.getenv("DB_HOST"))
+    print( os.getenv("DB_NAME") )
+    print( os.getenv("DB_USER") )
+    print( os.getenv("DB_PASSWORD") )
+    print( os.getenv("DB_HOST") )
+    print( os.getenv("DB_PORT") )
 
     # scheduler
     SCHE.activate()
