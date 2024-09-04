@@ -2,6 +2,7 @@
 
 
 # lib
+import os
 from fastapi import FastAPI, staticfiles
 
 from dotenv import load_dotenv
@@ -15,13 +16,15 @@ from app.l1.routers.trend import router as router_trend
 import app.l2.trend as TREND
 
 # method
-async def startup():
+async def startrtup():
+    print("app start ====================================")
     # script
     # alembic revision --autogenerate -m "update" 
     # alembic upgrade head 
 
     # env
     load_dotenv()
+    print(os.getenv("DB_HOST"))
 
     # scheduler
     SCHE.activate()
@@ -43,6 +46,7 @@ async def startup():
         await conn.run_sync( DB.BASE.metadata.create_all )
 
     # authorization
+    print("app end ====================================")
 
 
 async def shutdown():
