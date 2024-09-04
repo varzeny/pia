@@ -28,4 +28,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 애플리케이션 시작 명령어 
 
-CMD ["uvicorn", "main:application", "--host", "0.0.0.0", "--port", "9000"] 
+CMD ["sh", "-c", "alembic revision --autogenerate -m 'update' && \
+alembic upgrade head && \
+uvicorn main:application --host 0.0.0.0 --port 9000"] 
