@@ -16,7 +16,7 @@ from app.l1.routers.trend import router as router_trend
 import app.l2.trend as TREND
 
 # method
-async def startrtup():
+async def startup():
     print("app start ====================================")
     # script
     # alembic revision --autogenerate -m "update" 
