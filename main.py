@@ -8,7 +8,6 @@ from fastapi import FastAPI, staticfiles
 from dotenv import load_dotenv
 
 # env
-load_dotenv()
 
 # module
 import app.core.background.scheduler as SCHE
@@ -21,6 +20,8 @@ import app.l2.trend as TREND
 # method
 async def startup():
     print("app start ====================================")
+    load_dotenv()
+
     # script
     # alembic revision --autogenerate -m "update" 
     # alembic upgrade head 
