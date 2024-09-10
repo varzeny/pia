@@ -21,7 +21,6 @@ import app.l2.trend as TREND
 # method
 async def startup():
     print("app start ====================================")
-    load_dotenv()
 
     # script
     # alembic revision --autogenerate -m "update" 
