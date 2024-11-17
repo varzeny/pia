@@ -28,7 +28,7 @@ async def get_summary(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
         .order_by( desc(DB.Trend.created_at) )
         .limit(1)
     )
-    summary = result.scalars().all()
+    summary = result.scalar()
     print( summary.rank_1 )
     print( summary.rank_2 )
     print( summary.rank_3 )
