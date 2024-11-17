@@ -29,8 +29,10 @@ async def get_summary(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
         .limit(1)
     )
     summary = result.scalars().all()
-    for s in summary:
-        print(s)
+    print( summary.rank_1 )
+    print( summary.rank_2 )
+    print( summary.rank_3 )
+
 
     resp = templates.TemplateResponse(
         request=req,
