@@ -13,9 +13,20 @@
     <!-- <script src="static/home/js/summary.js"></script> -->
 </head>
 <body>
-    {{ summary.rank_1 }}
-    {{ summary.rank_2 }}
-    {{ summary.rank_3 }}
+    <h3>south korea trend</h3>
+    <ul>
+        <li><a target="_blank" href="https://www.google.com/search?q={{ summary.rank_1 }}&tbm=nws">
+            <h4>{{ summary.rank_1 }}</h4>
+        </a></li>
+
+        <li><a target="_blank" href="https://www.google.com/search?q={{ summary.rank_2 }}&tbm=nws">
+            <h4>{{ summary.rank_2 }}</h4>
+        </a></li>
+
+        <li><a target="_blank" href="https://www.google.com/search?q={{ summary.rank_3 }}&tbm=nws">
+            <h4>{{ summary.rank_3 }}</h4>
+        </a></li>
+    </ul>
 
 </body>
 </html>
