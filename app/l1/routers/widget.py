@@ -24,13 +24,13 @@ async def get_summary(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
 
     result = await ss.execute(
         select(DB.Trend.rank_1, DB.Trend.rank_2, DB.Trend.rank_3)
-        .where(DB.Trend.country=="south_kore")
+        .where(DB.Trend.country=="south_korea")
     )
-    data = result.scalars().all()
+    summary = result.scalars().all()
 
     resp = templates.TemplateResponse(
         request=req,
         name="/trend/summary.html",
-        context={"data":data}
+        context={"summary":summary}
     )
     return resp
