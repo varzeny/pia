@@ -27,6 +27,7 @@ async def get_summary(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
         .where(DB.Trend.country=="south_korea")
     )
     summary = result.scalars().all()
+    print(summary)
 
     resp = templates.TemplateResponse(
         request=req,
