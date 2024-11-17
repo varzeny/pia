@@ -15,6 +15,7 @@ import app.core.background.scheduler as SCHE
 import app.core.database as DB
 from app.l1.routers.home import router as router_home
 from app.l1.routers.trend import router as router_trend
+from app.l1.routers.widget import router as router_widget
 
 import app.l2.trend as TREND
 
@@ -81,6 +82,7 @@ application.mount(
 # 라우터
 application.include_router( router_home )
 application.include_router( router_trend )
+application.include_router( router_widget )
 
 
 if __name__ == "__main__":

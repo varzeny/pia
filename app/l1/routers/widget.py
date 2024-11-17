@@ -31,6 +31,6 @@ async def get_summary(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
     resp = templates.TemplateResponse(
         request=req,
         name="/trend/summary.html",
-        context={}
+        context={"data":data}
     )
     return resp
