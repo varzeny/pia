@@ -1,2 +1,12 @@
 /* summary.css */
 
+h3 {
+    font-size: 1rem;
+}
+h4 {
+    font-size: 0.7rem;
+}
+
+li {
+    margin-left: 1rem;
+}
