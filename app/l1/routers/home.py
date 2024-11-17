@@ -45,6 +45,8 @@ async def get_html_root(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
     return resp
 
 
+
+
 @router.get("/about")
 async def get_html_about(req:Request):
     p = os.path.join(os.path.dirname(__file__), "../../../", "README.md")
