@@ -25,9 +25,12 @@ async def get_summary(req:Request, ss:AsyncSession=Depends(DB.get_ss)):
     result = await ss.execute(
         select(DB.Trend.rank_1, DB.Trend.rank_2, DB.Trend.rank_3)
         .where(DB.Trend.country=="south_korea")
+        .order_by( desc(DB.Trend.created_at) )
+        .limit(1)
     )
     summary = result.scalars().all()
-    print(summary)
+    for s in summary:
+        print(s)
 
     resp = templates.TemplateResponse(
         request=req,
